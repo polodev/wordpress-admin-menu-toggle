@@ -6,7 +6,7 @@ Plugin Name: Wordpress Admin Menu Toggle
 Plugin URI: https://www.radiustheme.com
 Description: To toggle admin menu which has submenu. It helps me to organize large menu when I do theme development
 Version: 1.0
-Author: RadiusTheme
+Author: Polo Dev
 Author URI: https://www.radiustheme.com
 */
 
