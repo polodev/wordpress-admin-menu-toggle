@@ -35,17 +35,11 @@ var adminMenuToggle = {
     this.closeOtherSiblings();
     var $rootLiEl = $(el);
     var allSiblings = $rootLiEl.nextUntil('.menu-item.menu-item-depth-0');
-
-
     if ($rootLiEl.hasClass('show-siblings')) {
-      allSiblings.each(function(index, el2) {
-        $(el2).hide();
-      });
+      allSiblings.hide();
       $rootLiEl.removeClass('show-siblings');
     }else {
-      allSiblings.each(function(index, el2) {
-        $(el2).show();
-      });
+      allSiblings.show();
       $rootLiEl.addClass('show-siblings');
     }
   },
