@@ -3,11 +3,11 @@ namespace App\Github;
 
 /*
 Plugin Name: Wordpress admin menu toggle
-Plugin URI: https://www.github.com
+Plugin URI: https://www.radiustheme.com
 Description: To toggle admin menu which has submenu
 Version: 1.0
-Author: Github
-Author URI: https://www.github.com
+Author: RadiusTheme
+Author URI: https://www.radiustheme.com
 */
 
 class wordpress_admin_menu_toggle {
