@@ -33,10 +33,21 @@ var adminMenuToggle = {
   },
   showSiblings: function (el) {
     this.closeOtherSiblings();
-    var allSiblings = $(el).nextUntil('.menu-item.menu-item-depth-0');
-    allSiblings.each(function(index, el2) {
-      $(el2).show();
-    });
+    var $rootLiEl = $(el);
+    var allSiblings = $rootLiEl.nextUntil('.menu-item.menu-item-depth-0');
+
+
+    if ($rootLiEl.hasClass('show-siblings')) {
+      allSiblings.each(function(index, el2) {
+        $(el2).hide();
+      });
+      $rootLiEl.removeClass('show-siblings');
+    }else {
+      allSiblings.each(function(index, el2) {
+        $(el2).show();
+      });
+      $rootLiEl.addClass('show-siblings');
+    }
   },
   closeOtherSiblings() {
     this.mainMenu.find('li.menu-item').not('.menu-item.menu-item-depth-0').hide();
