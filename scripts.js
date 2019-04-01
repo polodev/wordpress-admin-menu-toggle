@@ -1,5 +1,7 @@
 "use strict";
 
+;(function ($) {
+
 var adminMenuToggle = {
   menuColor: 'green',
   init: function () {
@@ -48,8 +50,10 @@ var adminMenuToggle = {
   }
 }
 
-;(function ($) {
-  $(document).ready(function () {
-    adminMenuToggle.init();
-  })
+$(document).ready(function () {
+  adminMenuToggle.init();
+})
+
+
+
 })(jQuery);
