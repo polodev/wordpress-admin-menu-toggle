@@ -3,7 +3,15 @@
 ;(function ($) {
 
 var adminMenuToggle = {
-  menuColor: 'green',
+  colors: [
+  'cadetblue', 'darkcyan', 'darkgreen', 'darkmagenta', 
+  'darkolivegreen', 'darkorchid', 'darkred', 'darkslateblue', 
+  'deeppink', 'deepskyblue', 'deemgreey', 'dodgerblue',
+  ],
+  // developer can change color from next line
+  menuColor: function () {
+    return this.colors[1];
+  },
   init: function () {
     this.domCached();
     this.bindEvents();
@@ -21,15 +29,16 @@ var adminMenuToggle = {
   },
   titlePopup: function () {
     this.menuItem0.each(function(index, el) {
-      $(el).attr('title', 'Click to expand');
       var allSiblings = $(el).nextUntil('.menu-item.menu-item-depth-0');
       if (allSiblings.length) {
         var oldText = $(el).find('.menu-item-title').text();
         var newText = oldText + ' - (Click to view Nested menu).';
-        $(el).find('.menu-item-title').text(newText).css({
-          color: this.menuColor,
-          'font-weight': 'bold',
-        });
+        $(el).find('.menu-item-title')
+             .text(newText)
+             .css({
+                color: this.menuColor(),
+                'font-weight': 'bold',
+             }).attr('title', 'Click to Expand');
       }
     }.bind(this));
   },
